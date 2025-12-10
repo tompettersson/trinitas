@@ -11,13 +11,16 @@
     "test:pw": "playwright test"
   },
   "dependencies": {
+    "lucide-react": "^0.559.0",
     "next": "^15.5.4",
+    "p5": "^2.1.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.1",
     "@types/node": "^24.6.0",
+    "@types/p5": "^1.7.7",
     "@types/react": "^19.1.16",
     "autoprefixer": "^10.4.21",
     "eslint": "^8.57.1",
