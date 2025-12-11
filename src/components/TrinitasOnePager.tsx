@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useMemo } from "react";
+import { TrendingUp, Landmark, Building2 } from "lucide-react";
 // import CandlestickBackground from "./CandlestickBackground";
 
 export default function TrinitasOnePager() {
@@ -9,22 +10,25 @@ export default function TrinitasOnePager() {
 
   const highlights = [
     {
-      title: "Maßgeschneiderte Strategien",
-      body: "Ganzheitliche Betreuung anspruchsvoller Vermögenswerte mit Fokus auf langfristige Wertentwicklung.",
+      icon: TrendingUp,
+      title: "Asset Management",
+      body: "Wertorientierte Vermögensverwaltung mit Fokus auf nachhaltige Renditen und langfristige Wertentwicklung.",
     },
     {
-      title: "Starke Governance",
-      body: "Transparente Strukturen, verlässliche Partner und stringente Steuerung der Holding-Gesellschaften.",
+      icon: Landmark,
+      title: "Holding-Struktur",
+      body: "Effiziente Bündelung strategischer Beteiligungen in einer schlanken und transparenten Unternehmensstruktur.",
     },
     {
-      title: "Immobilien im Fokus",
-      body: "Aktives Asset-Management für Wohn- und Gewerbeimmobilien im Rhein-Main-Gebiet und darüber hinaus.",
+      icon: Building2,
+      title: "Immobilien",
+      body: "Aktives Management hochwertiger Wohn- und Gewerbeimmobilien im Rhein-Main-Gebiet und darüber hinaus.",
     },
   ];
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-zinc-950 text-white antialiased">
-      {/* Video Background */}
+      {/* Video Background - Dot pattern */}
       <video
         autoPlay
         muted
@@ -33,14 +37,15 @@ export default function TrinitasOnePager() {
         className="pointer-events-none absolute inset-0 h-full w-full object-cover"
         aria-hidden="true"
       >
-        <source src="/13904783_3840_2160_25fps.mp4" type="video/mp4" />
+        <source src="/background-dots.mp4" type="video/mp4" />
       </video>
 
-      {/* Dotted CRT/TV Overlay Effect */}
+      {/* Dotted CRT/TV Overlay Effect - disabled to test video alone
       <div
         className="pointer-events-none absolute inset-0 dotted-overlay"
         aria-hidden="true"
       />
+      */}
 
       {/* Dark overlay for content readability */}
       <div className="pointer-events-none absolute inset-0 bg-zinc-950/60" aria-hidden />
@@ -75,7 +80,7 @@ export default function TrinitasOnePager() {
 
         {/* Glassmorphism Highlight Cards */}
         <section className="mt-14 grid w-full gap-5 md:mt-20 md:grid-cols-3 md:gap-6">
-          {highlights.map(({ title, body }) => (
+          {highlights.map(({ icon: Icon, title, body }) => (
             <article
               key={title}
               className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:bg-white/[0.05] md:rounded-3xl md:p-8"
@@ -85,6 +90,7 @@ export default function TrinitasOnePager() {
                 className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-emerald-500/10 blur-3xl transition-opacity duration-300 group-hover:opacity-100 md:opacity-60"
                 aria-hidden
               />
+              <Icon className="relative h-6 w-6 text-white/60 mb-4" strokeWidth={1.5} />
               <h2 className="relative text-xs font-semibold uppercase tracking-[0.2em] text-zinc-400 md:tracking-[0.24em]">
                 {title}
               </h2>
