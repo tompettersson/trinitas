@@ -31,13 +31,13 @@ a {
 /* Dotted CRT/TV overlay effect */
 .dotted-overlay {
   background-image:
-    /* Center dot - 50% opacity */
-    radial-gradient(circle at 2px 2px, rgba(0, 0, 0, 0.5) 1px, transparent 1px),
-    /* Surrounding dots - 20% opacity, offset positions */
-    radial-gradient(circle at 0px 0px, rgba(0, 0, 0, 0.2) 1px, transparent 1px),
-    radial-gradient(circle at 4px 0px, rgba(0, 0, 0, 0.2) 1px, transparent 1px),
-    radial-gradient(circle at 0px 4px, rgba(0, 0, 0, 0.2) 1px, transparent 1px),
-    radial-gradient(circle at 4px 4px, rgba(0, 0, 0, 0.2) 1px, transparent 1px);
+    /* Center dot - 75% opacity (darker) */
+    radial-gradient(circle at 2px 2px, rgba(0, 0, 0, 0.75) 1px, transparent 1px),
+    /* Surrounding dots - 50% opacity */
+    radial-gradient(circle at 0px 0px, rgba(0, 0, 0, 0.5) 1px, transparent 1px),
+    radial-gradient(circle at 4px 0px, rgba(0, 0, 0, 0.5) 1px, transparent 1px),
+    radial-gradient(circle at 0px 4px, rgba(0, 0, 0, 0.5) 1px, transparent 1px),
+    radial-gradient(circle at 4px 4px, rgba(0, 0, 0, 0.5) 1px, transparent 1px);
   background-size: 4px 4px;
   background-position: 0 0;
 }
