@@ -29,25 +29,29 @@ export default function TrinitasOnePager() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-zinc-950 text-white antialiased">
       {/* Video Background - Dot pattern (grayscale) */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover grayscale"
-        aria-hidden="true"
-      >
-        <source src="/background-dots-slower.mp4" type="video/mp4" />
-      </video>
+      {/* Video container - smaller with padding from edges */}
+      <div className="pointer-events-none absolute inset-[10%] overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="h-full w-full object-cover grayscale"
+          aria-hidden="true"
+        >
+          <source src="/background-dots-slower.mp4" type="video/mp4" />
+        </video>
+        {/* Feathered edge overlay - soft transition to background */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: 'radial-gradient(ellipse 80% 70% at 50% 50%, transparent 30%, rgba(9,9,11,0.5) 60%, rgba(9,9,11,0.9) 85%, rgb(9,9,11) 100%)'
+          }}
+        />
+      </div>
 
-      {/* Radial vignette overlay - transparent center, fades to dark edges */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background: 'radial-gradient(ellipse 70% 60% at 50% 40%, transparent 0%, rgba(9,9,11,0.4) 50%, rgba(9,9,11,0.85) 80%, rgb(9,9,11) 100%)'
-        }}
-        aria-hidden
-      />
+      {/* Light overlay for content readability */}
+      <div className="pointer-events-none absolute inset-0 bg-zinc-950/40" aria-hidden />
 
       {/* Main Content */}
       <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 pt-14 pb-10 md:px-8 md:pt-20 md:pb-14">
