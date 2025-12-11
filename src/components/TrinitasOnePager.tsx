@@ -37,7 +37,7 @@ export default function TrinitasOnePager() {
         className="pointer-events-none absolute inset-0 h-full w-full object-cover grayscale"
         aria-hidden="true"
       >
-        <source src="/background-dots.mp4" type="video/mp4" />
+        <source src="/background-dots-slow.mp4" type="video/mp4" />
       </video>
 
       {/* Dark overlay for content readability */}
@@ -48,14 +48,25 @@ export default function TrinitasOnePager() {
         {/* Logo Section */}
         <header className="flex flex-col items-center">
           <h1 className="sr-only">TRINITAS</h1>
-          <Image
-            src="/logo-trinitas-new.svg"
-            alt="TRINITAS Logo"
-            width={444}
-            height={295}
-            priority
-            className="h-32 w-auto md:h-40 lg:h-48"
-          />
+          <div className="relative">
+            {/* Nova glow effect behind logo */}
+            <div
+              className="absolute inset-0 -inset-x-8 -inset-y-4 rounded-full bg-white/[0.08] blur-3xl"
+              aria-hidden
+            />
+            <div
+              className="absolute inset-0 -inset-x-4 -inset-y-2 rounded-full bg-white/[0.04] blur-2xl"
+              aria-hidden
+            />
+            <Image
+              src="/logo-trinitas-new.svg"
+              alt="TRINITAS Logo"
+              width={444}
+              height={295}
+              priority
+              className="relative h-32 w-auto md:h-40 lg:h-48"
+            />
+          </div>
 
           {/* Tagline */}
           <p className="mt-6 text-center text-xs tracking-[0.2em] text-white/70 md:text-sm">
