@@ -29,7 +29,7 @@ export default function TrinitasOnePager() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-zinc-950 text-white antialiased">
       {/* Video container - smaller with padding from edges */}
-      <div className="pointer-events-none absolute inset-[12%]">
+      <div className="pointer-events-none absolute inset-[8%]">
         <video
           autoPlay
           muted
@@ -42,11 +42,11 @@ export default function TrinitasOnePager() {
         </video>
       </div>
 
-      {/* Radial vignette overlay - covers full screen, fades video edges */}
+      {/* Radial vignette overlay - covers full screen, fades video edges + darkens center */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
-          background: 'radial-gradient(ellipse 55% 45% at 50% 45%, transparent 0%, rgba(9,9,11,0.3) 40%, rgba(9,9,11,0.7) 60%, rgba(9,9,11,0.95) 80%, rgb(9,9,11) 100%)'
+          background: 'radial-gradient(ellipse 60% 50% at 50% 45%, rgba(9,9,11,0.5) 0%, rgba(9,9,11,0.6) 40%, rgba(9,9,11,0.8) 60%, rgba(9,9,11,0.95) 80%, rgb(9,9,11) 100%)'
         }}
         aria-hidden
       />
