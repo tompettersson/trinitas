@@ -28,27 +28,20 @@ export default function TrinitasOnePager() {
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-zinc-950 text-white antialiased">
-      {/* Video Background - Dot pattern */}
+      {/* Video Background - Dot pattern (grayscale) */}
       <video
         autoPlay
         muted
         loop
         playsInline
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover grayscale"
         aria-hidden="true"
       >
         <source src="/background-dots.mp4" type="video/mp4" />
       </video>
 
-      {/* Dotted CRT/TV Overlay Effect - disabled to test video alone
-      <div
-        className="pointer-events-none absolute inset-0 dotted-overlay"
-        aria-hidden="true"
-      />
-      */}
-
       {/* Dark overlay for content readability */}
-      <div className="pointer-events-none absolute inset-0 bg-zinc-950/60" aria-hidden />
+      <div className="pointer-events-none absolute inset-0 bg-zinc-950/70" aria-hidden />
 
       {/* Main Content */}
       <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 pt-14 pb-10 md:px-8 md:pt-20 md:pb-14">
