@@ -42,9 +42,9 @@ export default function TrinitasOnePager() {
         </video>
         {/* Vignette overlay - sized relative to video container, not screen */}
         <div
-          className="absolute -inset-[15%]"
+          className="absolute -inset-[20%]"
           style={{
-            background: 'radial-gradient(ellipse 45% 42% at 50% 48%, rgba(9,9,11,0.45) 0%, rgba(9,9,11,0.6) 60%, rgba(9,9,11,0.9) 85%, rgb(9,9,11) 100%)'
+            background: 'radial-gradient(ellipse 38% 40% at 50% 48%, rgba(9,9,11,0.45) 0%, rgba(9,9,11,0.6) 55%, rgba(9,9,11,0.92) 80%, rgb(9,9,11) 100%)'
           }}
         />
       </div>
