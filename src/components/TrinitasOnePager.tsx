@@ -3,97 +3,175 @@
 import Image from "next/image";
 import { useMemo } from "react";
 import dynamic from "next/dynamic";
-import { TrendingUp, Building2, Landmark } from "lucide-react";
 
-// Only load particles on desktop (SSR-safe)
-const ParticleBackground = dynamic(() => import("./ParticleBackground"), {
+// Only load animation on client (SSR-safe)
+const CandlestickBackground = dynamic(() => import("./CandlestickBackground"), {
   ssr: false,
 });
 
 export default function TrinitasOnePager() {
   const year = useMemo(() => new Date().getFullYear(), []);
 
-  const services = [
-    { icon: TrendingUp, label: "Asset Management" },
-    { icon: Landmark, label: "Holding-Struktur" },
-    { icon: Building2, label: "Immobilien" },
+  const highlights = [
+    {
+      title: "Maßgeschneiderte Strategien",
+      body: "Ganzheitliche Betreuung anspruchsvoller Vermögenswerte mit Fokus auf langfristige Wertentwicklung.",
+    },
+    {
+      title: "Starke Governance",
+      body: "Transparente Strukturen, verlässliche Partner und stringente Steuerung der Holding-Gesellschaften.",
+    },
+    {
+      title: "Immobilien im Fokus",
+      body: "Aktives Asset-Management für Wohn- und Gewerbeimmobilien im Rhein-Main-Gebiet und darüber hinaus.",
+    },
   ];
 
   return (
-    <main className="grainy-bg relative flex min-h-screen flex-col bg-zinc-950 text-white antialiased">
-      {/* Particle Background - Desktop only */}
-      <div className="hidden md:block">
-        <ParticleBackground />
+    <main className="relative min-h-screen overflow-hidden bg-zinc-950 text-white antialiased">
+      {/* Candlestick Animation Background */}
+      <CandlestickBackground />
+
+      {/* Subtle gradient overlay */}
+      <div className="pointer-events-none absolute inset-0" aria-hidden>
+        <div className="absolute inset-0 bg-[radial-gradient(60%_40%_at_50%_30%,rgba(9,9,11,0.3),rgba(9,9,11,0.8))]" />
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-8 py-20">
-        {/* Logo */}
-        <h1 className="sr-only">TRINITAS</h1>
-        <Image
-          src="/logo-trinitas-new.svg"
-          alt="TRINITAS Logo"
-          width={444}
-          height={295}
-          priority
-          className="h-48 w-auto md:h-64 lg:h-72"
-        />
+      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-6xl flex-col px-6 py-16 md:px-8 md:py-24">
+        {/* Logo Section */}
+        <header className="flex flex-col items-center">
+          <h1 className="sr-only">TRINITAS</h1>
+          <Image
+            src="/logo-trinitas-new.svg"
+            alt="TRINITAS Logo"
+            width={444}
+            height={295}
+            priority
+            className="h-36 w-auto md:h-48 lg:h-56"
+          />
 
-        {/* Tagline */}
-        <p className="mt-10 text-center text-sm tracking-[0.2em] text-white/80 md:text-base">
-          Vermögensverwaltung. Immobilien. Beteiligungen.
-        </p>
+          {/* Tagline */}
+          <p className="mt-8 text-center text-sm tracking-[0.2em] text-white/70 md:text-base">
+            Vermögensverwaltung · Immobilien · Beteiligungen
+          </p>
+        </header>
 
-        {/* Three Pillars */}
-        <section className="mt-16 flex flex-col items-center gap-8 md:mt-20 md:flex-row md:gap-16 lg:gap-24">
-          {services.map(({ icon: Icon, label }) => (
-            <div key={label} className="flex flex-col items-center gap-3">
-              <Icon className="h-6 w-6 text-white/60" strokeWidth={1.5} />
-              <span className="text-xs tracking-[0.15em] text-white/90">{label}</span>
-            </div>
+        {/* Hero Description */}
+        <section className="mt-12 text-center md:mt-16">
+          <p className="mx-auto max-w-2xl text-balance text-sm leading-7 text-zinc-300 md:text-base md:leading-8">
+            Die TRINITAS bündelt strategische Beteiligungen und Vermögenswerte in einer schlanken Holding-Struktur.
+            Wir schaffen nachhaltigen Mehrwert durch wertorientiertes Asset-Management und die Entwicklung hochwertiger Immobilienportfolios.
+          </p>
+        </section>
+
+        {/* Glassmorphism Highlight Cards */}
+        <section className="mt-14 grid w-full gap-5 md:mt-20 md:grid-cols-3 md:gap-6">
+          {highlights.map(({ title, body }) => (
+            <article
+              key={title}
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-white/20 hover:bg-white/[0.08] md:rounded-3xl md:p-8"
+            >
+              {/* Subtle glow effect */}
+              <div
+                className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-emerald-500/10 blur-3xl transition-opacity duration-300 group-hover:opacity-100 md:opacity-60"
+                aria-hidden
+              />
+              <h2 className="relative text-xs font-semibold uppercase tracking-[0.2em] text-zinc-400 md:tracking-[0.24em]">
+                {title}
+              </h2>
+              <p className="relative mt-4 text-sm leading-6 text-zinc-100/90 md:text-base md:leading-7">
+                {body}
+              </p>
+            </article>
           ))}
         </section>
+
+        {/* Company & Contact Card */}
+        <section className="mt-10 w-full rounded-2xl border border-white/10 bg-white/5 p-8 shadow-2xl backdrop-blur-xl md:mt-16 md:rounded-3xl md:p-12">
+          <div className="grid gap-10 md:grid-cols-[1.2fr_1fr] md:gap-14">
+            {/* Company Info */}
+            <div>
+              <h2 className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-400">
+                Unternehmen
+              </h2>
+              <dl className="mt-5 space-y-4 text-sm leading-7 text-zinc-100/90 md:text-base">
+                <div>
+                  <dt className="text-zinc-400">Geschäftsführer</dt>
+                  <dd className="text-white">Marcel&nbsp;Julien</dd>
+                </div>
+                <div>
+                  <dt className="text-zinc-400">Handelsregister</dt>
+                  <dd>
+                    Amtsgericht Offenbach am Main
+                    <br />
+                    Register-Nr. HRB XXXX
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-zinc-400">Sitz der Gesellschaft</dt>
+                  <dd>
+                    Rudolf-Diesel-Str. 2
+                    <br />
+                    63322 Rödermark
+                  </dd>
+                </div>
+              </dl>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h2 className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-400">
+                Kontakt
+              </h2>
+              <div className="mt-5 space-y-4 text-sm leading-7 md:text-base">
+                <p>
+                  E-Mail:{" "}
+                  <a
+                    className="inline-flex items-center gap-2 underline decoration-white/40 underline-offset-4 transition hover:decoration-white"
+                    href="mailto:service@trinitas.gmbh"
+                  >
+                    <span>service@trinitas.gmbh</span>
+                    <span
+                      className="inline-block h-2 w-2 rounded-full bg-emerald-400/80"
+                      aria-hidden
+                    />
+                  </a>
+                </p>
+                <p>
+                  Telefon:{" "}
+                  <a
+                    className="underline decoration-white/40 underline-offset-4 transition hover:decoration-white"
+                    href="tel:+496074698586"
+                  >
+                    +49 (0) 6074 – 698 586
+                  </a>
+                </p>
+                <div>
+                  <p className="text-zinc-400">Sprechzeiten</p>
+                  <ul className="mt-2 space-y-1 text-sm text-zinc-100/90">
+                    <li>Mo–Do: 07:30–12:30 Uhr</li>
+                    <li>Fr: 07:30–11:00 Uhr</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="mt-auto flex w-full flex-col items-center gap-6 border-t border-white/10 pt-8 text-xs text-zinc-400 md:flex-row md:justify-between">
+          <nav className="flex flex-wrap items-center justify-center gap-6">
+            <a className="transition hover:text-white" href="/impressum">
+              Impressum
+            </a>
+            <a className="transition hover:text-white" href="/datenschutz">
+              Datenschutz
+            </a>
+          </nav>
+          <span>© {year} TRINITAS</span>
+        </footer>
       </div>
-
-      {/* Footer - Full Width */}
-      <footer className="relative z-10 border-t border-white/10 bg-zinc-950/80 px-8 py-8">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 text-xs text-white/50 md:flex-row md:justify-between">
-          {/* Company Info */}
-          <div className="flex flex-col items-center gap-1 text-center md:items-start md:text-left">
-            <span className="text-white/70">TRINITAS</span>
-            <span>Rudolf-Diesel-Str. 2, 63322 Rödermark</span>
-          </div>
-
-          {/* Contact */}
-          <div className="flex flex-col items-center gap-1 text-center md:flex-row md:gap-6">
-            <a
-              href="mailto:service@trinitas.gmbh"
-              className="transition hover:text-white"
-            >
-              service@trinitas.gmbh
-            </a>
-            <a
-              href="tel:+496074698586"
-              className="transition hover:text-white"
-            >
-              +49 6074 698586
-            </a>
-          </div>
-
-          {/* Links & Copyright */}
-          <div className="flex flex-col items-center gap-2 md:items-end">
-            <nav className="flex gap-4">
-              <a href="/impressum" className="transition hover:text-white">
-                Impressum
-              </a>
-              <a href="/datenschutz" className="transition hover:text-white">
-                Datenschutz
-              </a>
-            </nav>
-            <span>© {year} TRINITAS</span>
-          </div>
-        </div>
-      </footer>
 
       {/* SEO / Structured Data */}
       <script
@@ -112,6 +190,11 @@ export default function TrinitasOnePager() {
               postalCode: "63322",
               addressLocality: "Rödermark",
               addressCountry: "DE",
+            },
+            employee: {
+              "@type": "Person",
+              name: "Marcel Julien",
+              jobTitle: "Geschäftsführer",
             },
           }),
         }}
