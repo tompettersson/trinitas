@@ -87,7 +87,7 @@ export default function TrinitasOnePager() {
           {highlights.map(({ icon: Icon, title, body }) => (
             <article
               key={title}
-              className="group relative overflow-hidden rounded-xl border-4 border-white/20 bg-white/[0.03] p-5 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:border-white/30 hover:bg-white/[0.05] md:rounded-2xl md:p-6"
+              className="group relative overflow-hidden rounded-xl border-4 border-white/10 bg-white/[0.03] p-5 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:bg-white/[0.05] md:rounded-2xl md:p-6"
             >
               {/* Subtle glow effect */}
               <div
@@ -106,7 +106,7 @@ export default function TrinitasOnePager() {
         </section>
 
         {/* Company & Contact Card */}
-        <section className="mt-8 w-full rounded-xl border-4 border-white/20 bg-white/[0.03] p-5 shadow-2xl backdrop-blur-sm md:mt-10 md:rounded-2xl md:p-6">
+        <section className="mt-8 w-full rounded-xl border-4 border-white/10 bg-white/[0.03] p-5 shadow-2xl backdrop-blur-sm md:mt-10 md:rounded-2xl md:p-6">
           <div className="grid gap-6 md:grid-cols-[1fr_1fr_1fr] md:gap-8">
             {/* Company Info */}
             <div>
