@@ -51,11 +51,11 @@ export default function TrinitasOnePager() {
           <div className="relative">
             {/* Nova glow effect behind logo - subtle, blended with background */}
             <div
-              className="absolute -inset-x-24 -inset-y-16 rounded-full bg-white/[0.08] blur-[80px] mix-blend-soft-light"
+              className="absolute -inset-x-24 -inset-y-16 rounded-full bg-white/[0.05] blur-[80px] mix-blend-soft-light"
               aria-hidden
             />
             <div
-              className="absolute -inset-x-16 -inset-y-10 rounded-full bg-white/[0.04] blur-[60px] mix-blend-soft-light"
+              className="absolute -inset-x-16 -inset-y-10 rounded-full bg-white/[0.025] blur-[60px] mix-blend-soft-light"
               aria-hidden
             />
             <Image
