@@ -40,8 +40,14 @@ export default function TrinitasOnePager() {
         <source src="/background-dots-slower.mp4" type="video/mp4" />
       </video>
 
-      {/* Dark overlay for content readability */}
-      <div className="pointer-events-none absolute inset-0 bg-zinc-950/70" aria-hidden />
+      {/* Radial vignette overlay - transparent center, fades to dark edges */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: 'radial-gradient(ellipse 70% 60% at 50% 40%, transparent 0%, rgba(9,9,11,0.4) 50%, rgba(9,9,11,0.85) 80%, rgb(9,9,11) 100%)'
+        }}
+        aria-hidden
+      />
 
       {/* Main Content */}
       <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 pt-14 pb-10 md:px-8 md:pt-20 md:pb-14">
