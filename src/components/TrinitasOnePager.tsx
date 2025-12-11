@@ -28,7 +28,7 @@ export default function TrinitasOnePager() {
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-zinc-950 text-white antialiased">
-      {/* Video container - smaller with padding from edges */}
+      {/* Video container with integrated vignette - relative to video size */}
       <div className="pointer-events-none absolute inset-[8%]">
         <video
           autoPlay
@@ -40,16 +40,14 @@ export default function TrinitasOnePager() {
         >
           <source src="/background-dots-slower.mp4" type="video/mp4" />
         </video>
+        {/* Vignette overlay - sized relative to video container, not screen */}
+        <div
+          className="absolute -inset-[15%]"
+          style={{
+            background: 'radial-gradient(ellipse 45% 42% at 50% 48%, rgba(9,9,11,0.45) 0%, rgba(9,9,11,0.6) 60%, rgba(9,9,11,0.9) 85%, rgb(9,9,11) 100%)'
+          }}
+        />
       </div>
-
-      {/* Radial vignette overlay - covers full screen, fades video edges + darkens center */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background: 'radial-gradient(ellipse 60% 50% at 50% 45%, rgba(9,9,11,0.5) 0%, rgba(9,9,11,0.6) 40%, rgba(9,9,11,0.8) 60%, rgba(9,9,11,0.95) 80%, rgb(9,9,11) 100%)'
-        }}
-        aria-hidden
-      />
 
       {/* Main Content */}
       <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 pt-14 pb-10 md:px-8 md:pt-20 md:pb-14">
