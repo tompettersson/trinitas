@@ -37,7 +37,7 @@ export default function TrinitasOnePager() {
         className="pointer-events-none absolute inset-0 h-full w-full object-cover grayscale"
         aria-hidden="true"
       >
-        <source src="/background-dots-slow.mp4" type="video/mp4" />
+        <source src="/background-dots-slower.mp4" type="video/mp4" />
       </video>
 
       {/* Dark overlay for content readability */}
