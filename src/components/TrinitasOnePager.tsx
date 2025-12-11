@@ -51,7 +51,7 @@ export default function TrinitasOnePager() {
 
       {/* Scanlines overlay */}
       <div
-        className="pointer-events-none absolute inset-0 z-[5] opacity-[0.08]"
+        className="pointer-events-none absolute inset-0 z-[5] opacity-[0.25]"
         style={{
           backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0,0,0,0.8) 1px, rgba(0,0,0,0.8) 2px)',
           backgroundSize: '100% 2px'
