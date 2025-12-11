@@ -49,16 +49,6 @@ export default function TrinitasOnePager() {
         />
       </div>
 
-      {/* Scanlines overlay */}
-      <div
-        className="pointer-events-none absolute inset-0 z-[5] opacity-[0.25]"
-        style={{
-          backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0,0,0,0.8) 1px, rgba(0,0,0,0.8) 2px)',
-          backgroundSize: '100% 2px'
-        }}
-        aria-hidden
-      />
-
       {/* Main Content */}
       <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 pt-14 pb-10 md:px-8 md:pt-20 md:pb-14">
         {/* Logo Section */}
@@ -223,6 +213,16 @@ export default function TrinitasOnePager() {
             },
           }),
         }}
+      />
+
+      {/* Scanlines overlay - on top of everything */}
+      <div
+        className="pointer-events-none fixed inset-0 z-50 opacity-[0.25]"
+        style={{
+          backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0,0,0,0.8) 1px, rgba(0,0,0,0.8) 2px)',
+          backgroundSize: '100% 2px'
+        }}
+        aria-hidden
       />
     </main>
   );
