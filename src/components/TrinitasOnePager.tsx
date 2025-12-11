@@ -51,7 +51,7 @@ export default function TrinitasOnePager() {
       <div className="pointer-events-none absolute inset-0 bg-zinc-950/60" aria-hidden />
 
       {/* Main Content */}
-      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-6xl flex-col px-6 py-16 md:px-8 md:py-24">
+      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 pt-14 pb-10 md:px-8 md:pt-20 md:pb-14">
         {/* Logo Section */}
         <header className="flex flex-col items-center">
           <h1 className="sr-only">TRINITAS</h1>
@@ -61,40 +61,40 @@ export default function TrinitasOnePager() {
             width={444}
             height={295}
             priority
-            className="h-36 w-auto md:h-48 lg:h-56"
+            className="h-32 w-auto md:h-40 lg:h-48"
           />
 
           {/* Tagline */}
-          <p className="mt-8 text-center text-sm tracking-[0.2em] text-white/70 md:text-base">
+          <p className="mt-6 text-center text-xs tracking-[0.2em] text-white/70 md:text-sm">
             Vermögensverwaltung · Immobilien · Beteiligungen
           </p>
         </header>
 
         {/* Hero Description */}
-        <section className="mt-12 text-center md:mt-16">
-          <p className="mx-auto max-w-2xl text-balance text-sm leading-7 text-zinc-300 md:text-base md:leading-8">
+        <section className="mt-8 text-center md:mt-10">
+          <p className="mx-auto max-w-3xl text-balance text-xs leading-6 text-zinc-300 md:text-sm md:leading-7">
             Die TRINITAS bündelt strategische Beteiligungen und Vermögenswerte in einer schlanken Holding-Struktur.
             Wir schaffen nachhaltigen Mehrwert durch wertorientiertes Asset-Management und die Entwicklung hochwertiger Immobilienportfolios.
           </p>
         </section>
 
         {/* Glassmorphism Highlight Cards */}
-        <section className="mt-14 grid w-full gap-5 md:mt-20 md:grid-cols-3 md:gap-6">
+        <section className="mt-10 grid w-full gap-4 md:mt-12 md:grid-cols-3 md:gap-5">
           {highlights.map(({ icon: Icon, title, body }) => (
             <article
               key={title}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:bg-white/[0.05] md:rounded-3xl md:p-8"
+              className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] p-5 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:bg-white/[0.05] md:rounded-2xl md:p-6"
             >
               {/* Subtle glow effect */}
               <div
-                className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-emerald-500/10 blur-3xl transition-opacity duration-300 group-hover:opacity-100 md:opacity-60"
+                className="absolute -right-8 -top-8 h-20 w-20 rounded-full bg-emerald-500/10 blur-3xl transition-opacity duration-300 group-hover:opacity-100 md:opacity-60"
                 aria-hidden
               />
-              <Icon className="relative h-6 w-6 text-white/60 mb-4" strokeWidth={1.5} />
-              <h2 className="relative text-xs font-semibold uppercase tracking-[0.2em] text-zinc-400 md:tracking-[0.24em]">
+              <Icon className="relative h-5 w-5 text-white mb-3" strokeWidth={1.5} />
+              <h2 className="relative text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-400 md:text-xs md:tracking-[0.24em]">
                 {title}
               </h2>
-              <p className="relative mt-4 text-sm leading-6 text-zinc-100/90 md:text-base md:leading-7">
+              <p className="relative mt-3 text-xs leading-5 text-zinc-100/90 md:text-sm md:leading-6">
                 {body}
               </p>
             </article>
@@ -102,80 +102,71 @@ export default function TrinitasOnePager() {
         </section>
 
         {/* Company & Contact Card */}
-        <section className="mt-10 w-full rounded-2xl border border-white/10 bg-white/[0.03] p-8 shadow-2xl backdrop-blur-sm md:mt-16 md:rounded-3xl md:p-12">
-          <div className="grid gap-10 md:grid-cols-[1.2fr_1fr] md:gap-14">
+        <section className="mt-8 w-full rounded-xl border border-white/10 bg-white/[0.03] p-5 shadow-2xl backdrop-blur-sm md:mt-10 md:rounded-2xl md:p-6">
+          <div className="grid gap-6 md:grid-cols-[1fr_1fr_1fr] md:gap-8">
             {/* Company Info */}
             <div>
-              <h2 className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-400">
+              <h2 className="text-[10px] font-semibold uppercase tracking-[0.24em] text-zinc-400 md:text-xs">
                 Unternehmen
               </h2>
-              <dl className="mt-5 space-y-4 text-sm leading-7 text-zinc-100/90 md:text-base">
+              <dl className="mt-3 space-y-2 text-xs leading-5 text-zinc-100/90 md:text-sm md:leading-6">
                 <div>
                   <dt className="text-zinc-400">Geschäftsführer</dt>
                   <dd className="text-white">Marcel&nbsp;Julien</dd>
                 </div>
                 <div>
                   <dt className="text-zinc-400">Handelsregister</dt>
-                  <dd>
-                    Amtsgericht Offenbach am Main
-                    <br />
-                    Register-Nr. HRB XXXX
-                  </dd>
+                  <dd>AG Offenbach · HRB XXXX</dd>
                 </div>
                 <div>
-                  <dt className="text-zinc-400">Sitz der Gesellschaft</dt>
-                  <dd>
-                    Rudolf-Diesel-Str. 2
-                    <br />
-                    63322 Rödermark
-                  </dd>
+                  <dt className="text-zinc-400">Sitz</dt>
+                  <dd>Rudolf-Diesel-Str. 2, 63322 Rödermark</dd>
                 </div>
               </dl>
             </div>
 
             {/* Contact */}
             <div>
-              <h2 className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-400">
+              <h2 className="text-[10px] font-semibold uppercase tracking-[0.24em] text-zinc-400 md:text-xs">
                 Kontakt
               </h2>
-              <div className="mt-5 space-y-4 text-sm leading-7 md:text-base">
+              <div className="mt-3 space-y-2 text-xs leading-5 md:text-sm md:leading-6">
                 <p>
-                  E-Mail:{" "}
                   <a
                     className="inline-flex items-center gap-2 underline decoration-white/40 underline-offset-4 transition hover:decoration-white"
                     href="mailto:service@trinitas.gmbh"
                   >
-                    <span>service@trinitas.gmbh</span>
-                    <span
-                      className="inline-block h-2 w-2 rounded-full bg-emerald-400/80"
-                      aria-hidden
-                    />
+                    service@trinitas.gmbh
+                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400/80" aria-hidden />
                   </a>
                 </p>
                 <p>
-                  Telefon:{" "}
                   <a
                     className="underline decoration-white/40 underline-offset-4 transition hover:decoration-white"
                     href="tel:+496074698586"
                   >
-                    +49 (0) 6074 – 698 586
+                    +49 6074 698586
                   </a>
                 </p>
-                <div>
-                  <p className="text-zinc-400">Sprechzeiten</p>
-                  <ul className="mt-2 space-y-1 text-sm text-zinc-100/90">
-                    <li>Mo–Do: 07:30–12:30 Uhr</li>
-                    <li>Fr: 07:30–11:00 Uhr</li>
-                  </ul>
-                </div>
               </div>
+            </div>
+
+            {/* Hours */}
+            <div>
+              <h2 className="text-[10px] font-semibold uppercase tracking-[0.24em] text-zinc-400 md:text-xs">
+                Sprechzeiten
+              </h2>
+              <ul className="mt-3 space-y-1 text-xs leading-5 text-zinc-100/90 md:text-sm md:leading-6">
+                <li>Mo–Do: 07:30–12:30 Uhr</li>
+                <li>Fr: 07:30–11:00 Uhr</li>
+              </ul>
             </div>
           </div>
         </section>
 
         {/* Footer */}
-        <footer className="mt-auto flex w-full flex-col items-center gap-6 border-t border-white/10 pt-8 text-xs text-zinc-400 md:flex-row md:justify-between">
-          <nav className="flex flex-wrap items-center justify-center gap-6">
+        <footer className="mt-auto flex w-full flex-col items-center gap-4 border-t border-white/10 pt-5 text-[10px] text-zinc-400 md:flex-row md:justify-between md:text-xs">
+          <nav className="flex flex-wrap items-center justify-center gap-4">
             <a className="transition hover:text-white" href="/impressum">
               Impressum
             </a>
