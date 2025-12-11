@@ -1,16 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo, useState, useEffect } from "react";
-import CandlestickBackground from "./CandlestickBackground";
+import { useMemo } from "react";
+// import CandlestickBackground from "./CandlestickBackground";
 
 export default function TrinitasOnePager() {
   const year = useMemo(() => new Date().getFullYear(), []);
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   const highlights = [
     {
@@ -29,12 +24,27 @@ export default function TrinitasOnePager() {
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-zinc-950 text-white antialiased">
-      {/* Candlestick Animation Background - only render on client */}
-      {isMounted && <CandlestickBackground />}
+      {/* Video Background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+        aria-hidden="true"
+      >
+        <source src="/13904783_3840_2160_25fps.mp4" type="video/mp4" />
+      </video>
 
-      {/* Subtle gradient overlay */}
+      {/* Dotted CRT/TV Overlay Effect */}
+      <div
+        className="pointer-events-none absolute inset-0 dotted-overlay"
+        aria-hidden="true"
+      />
+
+      {/* Gradient overlay for content readability */}
       <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <div className="absolute inset-0 bg-[radial-gradient(60%_40%_at_50%_30%,rgba(9,9,11,0.3),rgba(9,9,11,0.8))]" />
+        <div className="absolute inset-0 bg-zinc-950/40" />
       </div>
 
       {/* Main Content */}
