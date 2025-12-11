@@ -53,8 +53,8 @@ export default function TrinitasOnePager() {
       <div
         className="pointer-events-none absolute inset-0 z-20 opacity-[0.5]"
         style={{
-          backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0,0,0,0.8) 1px, rgba(0,0,0,0.8) 2px)',
-          backgroundSize: '100% 2px'
+          backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.8) 2px, rgba(0,0,0,0.8) 4px)',
+          backgroundSize: '100% 4px'
         }}
         aria-hidden
       />
