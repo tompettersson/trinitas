@@ -1,16 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo } from "react";
-import dynamic from "next/dynamic";
-
-// Only load animation on client (SSR-safe)
-const CandlestickBackground = dynamic(() => import("./CandlestickBackground"), {
-  ssr: false,
-});
+import { useMemo, useState, useEffect } from "react";
+import CandlestickBackground from "./CandlestickBackground";
 
 export default function TrinitasOnePager() {
   const year = useMemo(() => new Date().getFullYear(), []);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const highlights = [
     {
@@ -29,8 +29,8 @@ export default function TrinitasOnePager() {
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-zinc-950 text-white antialiased">
-      {/* Candlestick Animation Background */}
-      <CandlestickBackground />
+      {/* Candlestick Animation Background - only render on client */}
+      {isMounted && <CandlestickBackground />}
 
       {/* Subtle gradient overlay */}
       <div className="pointer-events-none absolute inset-0" aria-hidden>
