@@ -42,10 +42,8 @@ export default function TrinitasOnePager() {
         aria-hidden="true"
       />
 
-      {/* Gradient overlay for content readability */}
-      <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <div className="absolute inset-0 bg-zinc-950/40" />
-      </div>
+      {/* Dark overlay for content readability */}
+      <div className="pointer-events-none absolute inset-0 bg-zinc-950/60" aria-hidden />
 
       {/* Main Content */}
       <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-6xl flex-col px-6 py-16 md:px-8 md:py-24">
@@ -80,7 +78,7 @@ export default function TrinitasOnePager() {
           {highlights.map(({ title, body }) => (
             <article
               key={title}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-white/20 hover:bg-white/[0.08] md:rounded-3xl md:p-8"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:bg-white/[0.05] md:rounded-3xl md:p-8"
             >
               {/* Subtle glow effect */}
               <div
@@ -98,7 +96,7 @@ export default function TrinitasOnePager() {
         </section>
 
         {/* Company & Contact Card */}
-        <section className="mt-10 w-full rounded-2xl border border-white/10 bg-white/5 p-8 shadow-2xl backdrop-blur-xl md:mt-16 md:rounded-3xl md:p-12">
+        <section className="mt-10 w-full rounded-2xl border border-white/10 bg-white/[0.03] p-8 shadow-2xl backdrop-blur-sm md:mt-16 md:rounded-3xl md:p-12">
           <div className="grid gap-10 md:grid-cols-[1.2fr_1fr] md:gap-14">
             {/* Company Info */}
             <div>
