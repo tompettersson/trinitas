@@ -49,13 +49,13 @@ export default function TrinitasOnePager() {
         <header className="flex flex-col items-center">
           <h1 className="sr-only">TRINITAS</h1>
           <div className="relative">
-            {/* Nova glow effect behind logo */}
+            {/* Nova glow effect behind logo - softer, more spread out */}
             <div
-              className="absolute inset-0 -inset-x-8 -inset-y-4 rounded-full bg-white/[0.08] blur-3xl"
+              className="absolute -inset-x-24 -inset-y-16 rounded-full bg-white/[0.06] blur-[80px]"
               aria-hidden
             />
             <div
-              className="absolute inset-0 -inset-x-4 -inset-y-2 rounded-full bg-white/[0.04] blur-2xl"
+              className="absolute -inset-x-16 -inset-y-10 rounded-full bg-white/[0.03] blur-[60px]"
               aria-hidden
             />
             <Image
