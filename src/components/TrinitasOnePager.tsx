@@ -190,7 +190,7 @@ export default function TrinitasOnePager() {
               Datenschutz
             </a>
           </nav>
-          <span>© {year} TRINITAS</span>
+          <span>© {year} TRINITAS GmbH</span>
         </footer>
       </div>
 
