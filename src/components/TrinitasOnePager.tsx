@@ -135,10 +135,6 @@ export default function TrinitasOnePager() {
                   <dd className="text-white">Marcel&nbsp;Julien</dd>
                 </div>
                 <div>
-                  <dt className="text-zinc-400">Handelsregister</dt>
-                  <dd>AG Offenbach · HRB XXXX</dd>
-                </div>
-                <div>
                   <dt className="text-zinc-400">Sitz</dt>
                   <dd>Rudolf-Diesel-Str. 2, 63322 Rödermark</dd>
                 </div>
